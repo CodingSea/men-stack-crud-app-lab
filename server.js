@@ -55,6 +55,34 @@ app.get("/food", async (req, res) =>
     }
 });
 
+app.get("/food/:id/edit", async (req, res) =>
+{
+    try
+    {
+        const food = await Food.findById(req.params.id);
+        console.log(food);
+        res.render("food-edit.ejs", {food});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+app.post("/food/:id/edit", async (req, res) =>
+{
+    try
+    {
+        const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body);
+        console.log(updatedFood);
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+    res.redirect("/food");
+});
+
 
 app.listen("3000", () =>
 {
