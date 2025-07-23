@@ -97,7 +97,19 @@ app.get("/food/:id/delete", async (req, res) =>
     }
 });
 
+app.get("/food/:id/view", async (req, res) =>
+{
+    try
+    {
+        const food = await Food.findById(req.params.id);
 
+        res.render("food-view.ejs", {food});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
 
 app.listen("3000", () =>
 {

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>View</h1>
+    <form action="/food/<%= food.id %>/view" method="get">
+        <div>
+            <label for="name">Name: </label>
+            <input name="name" type="text" id="name" required readonly value="<%= food.name %>">
+        </div>
+        <div>
+            <label for="description">Description: </label>
+            <textarea name="description" id="description" required readonly minlength="5"><%= food.description %></textarea>
+        </div>
+        <div>
+            <label for="countryOfOrigin">Country of Origin: </label>
+            <input name="countryOfOrigin" type="text" id="countryOfOrigin" readonly value="<%= food.countryOfOrigin %>">
+        </div>
+        <div>
+            <label for="image">Image: </label>
+            <input name="image" type="text" id="image" readonly value="<%= food.image %>">
+        </div>
+    </form>
+</body>
+</html>
