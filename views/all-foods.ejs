@@ -15,7 +15,9 @@
             <p>Description: <%= dish.description %></p>
             <p>Country of Origin: <%= dish.countryOfOrigin %></p>
             <img src="<%= dish.image %>">
+            <a href="/food/<%= dish.id %>/view"><button>View</button></a>
             <a href="/food/<%= dish.id %>/edit"><button>Edit</button></a>
+            <a href="/food/<%= dish.id %>/delete"><button>Delete</button></a>
         </div>
     <% }); %>
 </body>

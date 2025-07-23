@@ -84,18 +84,22 @@ app.post("/food/:id/edit", async (req, res) =>
 });
 
 
+app.get("/food/:id/delete", async (req, res) =>
+{
+    try
+    {
+        const deletedFood = await Food.findByIdAndDelete(req.params.id);
+        res.redirect("/food")
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+});
+
+
+
 app.listen("3000", () =>
 {
     console.log("Listening on port 3000");
 });
-
-/*
-try
-{
-
-}
-catch(error)
-{
-    console.log(error);
-}
-*/
