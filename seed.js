@@ -39,7 +39,15 @@ connectToDB();
 
 async function seed()
 {
-    await Food.insertMany(seedData);
+    try
+    {
+        await Food.insertMany(seedData);
+        console.log("Addedc seed file to database");
+    }
+    catch(error)
+    {
+        console.log("Error: " + error);
+    }
 }
 
 //seed();

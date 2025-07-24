@@ -15,8 +15,6 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(morgan("dev"));
 
-let seedFile;
-
 async function connectToDB()
 {
     try
@@ -39,5 +37,7 @@ app.listen("3000", () =>
     console.log("Listening on port 3000");
 });
 
-
-module.exports = seedFile;
+app.use((req,res) => 
+{
+    res.status(404).render("404.ejs");
+});
