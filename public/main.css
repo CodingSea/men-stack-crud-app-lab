@@ -11,4 +11,19 @@
 .dish img
 {
     width: 18em;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn
+{
+    display: flex;
+    width: 90%;
+    text-align: center;
+    margin: 5px auto;
+}
+
+a
+{
+    text-decoration: none;
 }

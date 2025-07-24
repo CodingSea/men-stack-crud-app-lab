@@ -11,14 +11,14 @@
     <a href="/food/new"><button>Add a Dish</button></a>
     <% food.forEach((dish) => { %>
         <div class="dish">
-            <p>Name: <%= dish.name %></p>
-            <p>Description: <%= dish.description %></p>
-            <p>Country of Origin: <%= dish.countryOfOrigin %></p>
+            <p><b>Name:</b> <%= dish.name %></p>
+            <p><b>Description:</b> <%= dish.description %></p>
+            <p><b>Country of Origin:</b> <%= dish.countryOfOrigin %></p>
             <img src="<%= dish.image %>">
-            <a href="/food/<%= dish.id %>/view"><button>View</button></a>
-            <a href="/food/<%= dish.id %>/edit"><button>Edit</button></a>
+            <a href="/food/<%= dish.id %>/view"><button class="btn">View</button></a>
+            <a href="/food/<%= dish.id %>/edit"><button class="btn">Edit</button></a>
             <form method="post" action="/food/<%= dish.id %>?_method=DELETE">
-                <button>Delete</button>
+                <button class="btn">Delete</button>
             </form>
         </div>
     <% }); %>
