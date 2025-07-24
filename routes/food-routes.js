@@ -2,7 +2,6 @@ const router = require("express").Router();
 const Food = require("../models/Food");
 
 
-
 router.get("/new", (req, res) => 
 {
     res.render("new.ejs");
@@ -25,7 +24,7 @@ router.get("", async (req, res) =>
 {
     try
     {
-        const food = await Food.find();
+        let food = await Food.find();
         res.render("all-foods.ejs", {food});
     }
     catch(error)
@@ -39,7 +38,7 @@ router.get("/:id/edit", async (req, res) =>
     try
     {
         const food = await Food.findById(req.params.id);
-        //console.log(food);
+        console.log(food);
         res.render("food-edit.ejs", {food});
     }
     catch(error)

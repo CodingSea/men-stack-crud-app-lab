@@ -15,12 +15,14 @@ app.use(express.urlencoded({extended: false}));
 
 app.use(morgan("dev"));
 
+let seedFile;
+
 async function connectToDB()
 {
     try
     {
         await mongoose.connect(process.env.DBString_URI);
-        //console.log("Connected to Database");
+        console.log("Connected to Database");
     }
     catch(error)
     {
@@ -36,3 +38,6 @@ app.listen("3000", () =>
 {
     console.log("Listening on port 3000");
 });
+
+
+module.exports = seedFile;
