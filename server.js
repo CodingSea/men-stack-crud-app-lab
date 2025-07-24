@@ -4,6 +4,9 @@ const Food = require("./models/Food");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 app.use(express.static("public"));
 
 app.use(express.urlencoded({extended: false}));
@@ -84,7 +87,7 @@ app.post("/food/:id/edit", async (req, res) =>
 });
 
 
-app.get("/food/:id/delete", async (req, res) =>
+app.delete("/food/:id", async (req, res) =>
 {
     try
     {
@@ -96,6 +99,8 @@ app.get("/food/:id/delete", async (req, res) =>
         console.log(error);
     }
 });
+
+app
 
 app.get("/food/:id/view", async (req, res) =>
 {
