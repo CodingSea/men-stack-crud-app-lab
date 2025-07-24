@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Edit</h1>
-    <form action="/food/<%= food.id %>/edit" method="post">
+    <form action="/food/<%= food.id %>/edit?_method=PUT" method="post">
         <div>
             <label for="name">Name: </label>
             <input name="name" type="text" id="name" required value="<%= food.name %>">
@@ -24,7 +24,7 @@
             <label for="image">Image: </label>
             <input name="image" type="text" id="image" value="<%= food.image %>">
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Update</button>
     </form>
     <a href="/food"><button>Go Back</button></a>
 </body>
