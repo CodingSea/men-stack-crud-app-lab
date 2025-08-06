@@ -7,24 +7,11 @@
 </head>
 <body>
     <h1>View</h1>
-    <form action="/food/<%= food.id %>/view" method="get">
-        <div>
-            <label for="name">Name: </label>
-            <input name="name" type="text" id="name" required readonly value="<%= food.name %>">
-        </div>
-        <div>
-            <label for="description">Description: </label>
-            <textarea name="description" id="description" required readonly minlength="5"><%= food.description %></textarea>
-        </div>
-        <div>
-            <label for="countryOfOrigin">Country of Origin: </label>
-            <input name="countryOfOrigin" type="text" id="countryOfOrigin" readonly value="<%= food.countryOfOrigin %>">
-        </div>
-        <div>
-            <label for="image">Image: </label>
-            <input name="image" type="text" id="image" readonly value="<%= food.image %>">
-        </div>
-    </form>
+    <h2><%= food.name %></h2>
+    <p><%= food.description %></p>
+    <p><%= food.countryOfOrigin %></p>
+    <img src="<%= food.image %>">
+    <br>
     <a href="/food"><button>Go Back</button></a>
 </body>
 </html>

@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const Food = require("./models/Food");
-const foodRoutes = require("./routes/food-routes")
+const foodRoutes = require("./routes/food-routes");
+const connectToDB = require("./config/db");
 
 const morgan = require("morgan");
 
@@ -14,19 +15,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}));
 
 app.use(morgan("dev"));
-
-async function connectToDB()
-{
-    try
-    {
-        await mongoose.connect(process.env.DBString_URI);
-        console.log("Connected to Database");
-    }
-    catch(error)
-    {
-        console.log(error);
-    }
-}
 
 connectToDB();
 
